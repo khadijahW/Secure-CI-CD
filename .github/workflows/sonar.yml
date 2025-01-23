@@ -17,11 +17,11 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Set up JDK 11
+      - name: Set up JDK 11 (OpenJDK)
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'adoptium'
+          distribution: 'openjdk'  # Use 'openjdk' instead of 'adoptium'
 
       - name: Cache SonarQube scanner
         uses: actions/cache@v2
@@ -38,7 +38,7 @@ jobs:
       - name: Run SonarQube Scanner
         run: |
           sonar-scanner \
-            -Dsonar.projectKey=GIthub\
+            -Dsonar.projectKey=GIthub # Replace this with your actual project key
             -Dsonar.sources=. \
             -Dsonar.host.url=http://localhost:9000 \
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
