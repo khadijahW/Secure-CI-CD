@@ -30,7 +30,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin' # Use 'zulu' or 'adopt' if preferred
-          java-version: '11' # SonarQube typically requires JDK 11 or 17
+          java-version: '21' # SonarQube typically requires JDK 11 or 17
 
       # Install and configure SonarQube Scanner
       - name: Install SonarQube Scanner
@@ -45,7 +45,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # Ensure this secret is set in your GitHub repo
         run: |
           sonar-scanner \
-            -Dsonar.projectKey=GIthun \
+            -Dsonar.projectKey=GIthub \
             -Dsonar.sources=. \
             -Dsonar.host.url=http://localhost:9000 \
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
