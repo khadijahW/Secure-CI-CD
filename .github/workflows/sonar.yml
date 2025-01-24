@@ -46,6 +46,6 @@ jobs:
         run: |
           sonar-scanner \
             -Dsonar.projectKey=GIthub \
-            -Dsonar.sources=.\
+            -Dsonar.sources=. \
             -Dsonar.host.url=http://localhost:9000 
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
