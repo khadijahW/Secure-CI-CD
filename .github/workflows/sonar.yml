@@ -17,11 +17,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Set up JDK 11 (OpenJDK)
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11'
-          distribution: 'openjdk'  # Use 'openjdk' instead of 'adoptium'
+    
 
       - name: Cache SonarQube scanner
         uses: actions/cache@v2
